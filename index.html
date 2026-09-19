@@ -110,7 +110,7 @@
             <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
             </svg>
-            เพิ่มกรุ๊ป/แกรม (BB250)
+            เพิ่มกรุ๊ป/แกรมใหม่
           </button>
 
           <!-- Quick Attach File Button -->
@@ -144,7 +144,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
           </span>
-          <input type="text" id="global-search" oninput="handleGlobalSearch(this.value)" placeholder="ค้นหา กรุ๊ป/แกรม เช่น BB270, BB250, CM125, KL250..." class="w-full pl-9 pr-3.5 py-1.5 bg-white border border-sky-200 rounded-xl text-xs placeholder-slate-400 text-slate-800 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 shadow-2xs">
+          <input type="text" id="global-search" oninput="handleGlobalSearch(this.value)" placeholder="ค้นหา กรุ๊ป/แกรม เช่น BB270, CM125, KL250, CA125..." class="w-full pl-9 pr-3.5 py-1.5 bg-white border border-sky-200 rounded-xl text-xs placeholder-slate-400 text-slate-800 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 shadow-2xs">
         </div>
 
         <!-- Filter: Group dropdown -->
@@ -167,7 +167,7 @@
         <div class="flex items-center space-x-1.5 text-slate-500">
           <span class="text-[11px] font-medium text-slate-400">ทางลัด:</span>
           <button onclick="selectItem('BB270'); switchTab('tab-deepdive');" class="px-2.5 py-1 rounded-lg bg-white border border-sky-200 text-sky-800 hover:bg-sky-100 font-bold transition shadow-2xs">BB270 (A)</button>
-          <button onclick="selectItem('BB250'); switchTab('tab-deepdive');" class="px-2.5 py-1 rounded-lg bg-white border border-amber-200 text-amber-800 hover:bg-amber-50 font-bold transition shadow-2xs" title="คลิกเพื่อจัดการหรือจำลอง BB250">BB250</button>
+          <button onclick="selectItem('CA125'); switchTab('tab-deepdive');" class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 transition shadow-2xs">CA125</button>
           <button onclick="selectItem('CM125'); switchTab('tab-deepdive');" class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 transition shadow-2xs">CM125</button>
           <button onclick="selectItem('KL250'); switchTab('tab-deepdive');" class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 transition shadow-2xs">KL250</button>
         </div>
@@ -198,11 +198,11 @@
             3. เมทริกซ์ 3 แผนก & Aging
           </button>
           <button onclick="switchTab('tab-files')" id="nav-tab-files" class="tab-btn px-4 py-2 text-xs sm:text-sm font-medium rounded-xl text-slate-600 hover:text-sky-800 hover:bg-sky-50 transition flex items-center whitespace-nowrap">
-            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+            <svg class="w-4 h-4 mr-2 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
-            4. ศูนย์ไฟล์สากล & อัปเดตข้อมูล (ทุกนามสกุล)
-            <span id="nav-file-badge" class="ml-1.5 px-2 py-0.5 rounded-full text-[10px] bg-sky-100 text-sky-700 font-bold">0</span>
+            4. กรุ๊ป/แกรม ที่ต้องจัดการเร่งด่วน (3 แผนกบริหาร)
+            <span id="nav-urgent-badge" class="ml-1.5 px-2 py-0.5 rounded-full text-[10px] bg-rose-100 text-rose-700 font-bold">47</span>
           </button>
           <button onclick="switchTab('tab-simulation')" id="nav-tab-simulation" class="tab-btn px-4 py-2 text-xs sm:text-sm font-medium rounded-xl text-slate-600 hover:text-sky-800 hover:bg-sky-50 transition flex items-center whitespace-nowrap">
             <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -494,7 +494,7 @@
         <div class="flex flex-wrap items-center gap-2 pt-1 text-xs">
           <span class="text-slate-500 font-medium text-[11px]">เลือกด่วน:</span>
           <button onclick="selectItem('BB270')" class="px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-800 hover:bg-emerald-100 font-bold transition border border-emerald-200">BB270 (A)</button>
-          <button onclick="selectItem('BB250')" class="px-2.5 py-1 rounded-lg bg-amber-50 text-amber-800 hover:bg-amber-100 font-bold transition border border-amber-200">BB250</button>
+          <button onclick="selectItem('CA125')" class="px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-800 hover:bg-emerald-100 font-bold transition border border-emerald-200">CA125 (A)</button>
           <button onclick="selectItem('CM125')" class="px-2.5 py-1 rounded-lg bg-white border border-sky-200 text-slate-700 hover:bg-sky-50 transition">CM125 (A)</button>
           <button onclick="selectItem('KL250')" class="px-2.5 py-1 rounded-lg bg-white border border-sky-200 text-slate-700 hover:bg-sky-50 transition">KL250 (A)</button>
           <button onclick="selectItem('CS105')" class="px-2.5 py-1 rounded-lg bg-white border border-sky-200 text-slate-700 hover:bg-sky-50 transition">CS105 (B)</button>
@@ -692,33 +692,190 @@
     </div>
 
     <!-- ==================== TAB 4: UNIVERSAL FILE MANAGER & IMPORTER ==================== -->
+    <!-- ==================== TAB 4: URGENT ACTION ITEMS FOR 3 DEPARTMENTS ==================== -->
     <div id="tab-files" class="space-y-6 w-full hidden">
       
-      <!-- Overview Banner (Clean White-Blue) -->
-      <div class="bg-gradient-to-r from-sky-600 via-blue-600 to-indigo-600 rounded-2xl p-6 text-white shadow-sm w-full">
-        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <!-- Overview Banner: Urgent Action (Clean White-Blue) -->
+      <div class="bg-gradient-to-r from-sky-700 via-sky-800 to-indigo-900 rounded-2xl p-6 text-white shadow-sm w-full">
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
           <div>
-            <div class="flex items-center space-x-2">
-              <span class="px-2.5 py-0.5 text-[11px] font-bold rounded-md bg-white/20 text-white border border-white/30">Universal File Vault</span>
-              <h2 class="text-base sm:text-lg font-bold text-white">ศูนย์จัดการไฟล์สากล & อัปเดตข้อมูล</h2>
+            <div class="flex items-center space-x-2.5">
+              <span class="px-2.5 py-1 text-xs font-bold rounded-lg bg-rose-500 text-white flex items-center shadow-xs">
+                <svg class="w-3.5 h-3.5 mr-1 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                Action Required
+              </span>
+              <h2 class="text-base sm:text-xl font-bold text-white">4. กรุ๊ป/แกรม ที่ต้องจัดการเร่งด่วน ให้ 3 แผนกนี้นำไปบริหาร</h2>
             </div>
-            <p class="text-xs text-sky-100 mt-1.5 max-w-3xl leading-relaxed">
-              รองรับไฟล์ **ทุกประเภท ทุกนามสกุล** (`.xlsx`, `.xls`, `.pdf`, `.docx`, `.png`, `.jpg`, `.dwg`, `.csv`, `.zip`, `.txt` ฯลฯ) จัดเก็บลงในเบราว์เซอร์ IndexedDB ปิดเครื่องข้อมูลไม่สูญหาย พร้อมระบบนำเข้าและสำรองข้อมูล
+            <p class="text-xs text-sky-100 mt-2 max-w-4xl leading-relaxed">
+              ศูนย์รวมรายการเร่งด่วนที่ต้องปฏิบัติทันทีระหว่าง <strong class="text-white underline">คลังม้วน + จัดซื้อ + วางแผน</strong> 
+              ตามหลักการ <strong class="text-amber-300">"ของไม่ขาด"</strong> (กลุ่ม A: ยอดใช้ 88.54% คุม Days Cover 15-20 วัน + ทยอยรับ PO) 
+              และ <strong class="text-amber-300">"เงินไม่จม"</strong> (กลุ่ม C: 21 รายการ Freeze PO ทันที + คุม Aging >60 วัน + ระบายสต็อก MTO)
             </p>
           </div>
-          <div class="flex items-center space-x-2 shrink-0">
-            <button onclick="exportBackupJson()" class="px-3.5 py-2 rounded-xl bg-white/15 hover:bg-white/25 text-xs font-semibold backdrop-blur-xs border border-white/25 transition flex items-center shadow-2xs">
-              💾 สำรองข้อมูล (JSON)
+          <div class="flex flex-wrap items-center gap-2 shrink-0">
+            <button onclick="exportUrgentActionPlan()" class="px-3.5 py-2 rounded-xl bg-white text-sky-800 hover:bg-sky-50 text-xs font-bold shadow-sm transition flex items-center">
+              📊 ส่งออกแผนปฏิบัติการ 3 แผนก (Excel)
             </button>
-            <button onclick="exportToExcel()" class="px-3.5 py-2 rounded-xl bg-white text-sky-700 hover:bg-sky-50 text-xs font-bold shadow-sm transition flex items-center">
-              📊 ส่งออก Excel รวม
+            <button onclick="exportBackupJson()" class="px-3.5 py-2 rounded-xl bg-white/15 hover:bg-white/25 text-xs font-semibold backdrop-blur-xs border border-white/25 transition flex items-center text-white shadow-2xs">
+              💾 สำรองข้อมูล (JSON)
             </button>
           </div>
         </div>
       </div>
 
-      <!-- Two-Column Form & Importer -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full">
+      <!-- 3 Department Mission Summary Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
+        <!-- Card 1: Roll Warehouse -->
+        <div class="bg-white p-5 rounded-2xl border border-sky-100 shadow-sm relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-2 h-full bg-sky-500"></div>
+          <div class="flex items-center space-x-3 mb-3">
+            <div class="w-10 h-10 rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center text-lg font-bold">🏭</div>
+            <div>
+              <h3 class="text-sm font-bold text-slate-900">ภารกิจแผนกคลังม้วน</h3>
+              <p class="text-[11px] text-slate-500 font-medium">Roll Warehouse Operations</p>
+            </div>
+          </div>
+          <ul class="space-y-2 text-xs text-slate-600">
+            <li class="flex items-start">
+              <span class="text-sky-600 font-bold mr-1.5">&bull;</span>
+              <span><strong>คุม Days Cover 15–20 วัน:</strong> ในกลุ่ม A (เช่น BB270 Min ~8 ม้วน / Max ~17 ม้วน)</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-sky-600 font-bold mr-1.5">&bull;</span>
+              <span><strong>จัดโซน Fast-Moving:</strong> ย้ายกลุ่ม A ไว้ใกล้ทางเบิกจ่าย ลดเวลาเคลื่อนย้าย</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-rose-600 font-bold mr-1.5">&bull;</span>
+              <span><strong>ตรวจสอบ Aging &gt;60 วัน:</strong> ในกลุ่ม C ทั้ง 21 รายการ ป้องกันม้วนเสียหาย/ฝุ่นเกาะ</span>
+            </li>
+          </ul>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px]">
+            <span class="text-slate-500">ความถี่ตรวจนับ:</span>
+            <span class="font-bold text-sky-700">กลุ่ม A รายสัปดาห์ / C รายเดือน</span>
+          </div>
+        </div>
+
+        <!-- Card 2: Purchasing -->
+        <div class="bg-white p-5 rounded-2xl border border-sky-100 shadow-sm relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-2 h-full bg-emerald-500"></div>
+          <div class="flex items-center space-x-3 mb-3">
+            <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-lg font-bold">🛒</div>
+            <div>
+              <h3 class="text-sm font-bold text-slate-900">ภารกิจแผนกจัดซื้อ</h3>
+              <p class="text-[11px] text-slate-500 font-medium">Purchasing & Sourcing</p>
+            </div>
+          </div>
+          <ul class="space-y-2 text-xs text-slate-600">
+            <li class="flex items-start">
+              <span class="text-emerald-600 font-bold mr-1.5">&bull;</span>
+              <span><strong>Staggered PO (ทยอยรับมอบ):</strong> กลุ่ม A เจรจา Supplier ส่งทีละงวด เงินไม่จม</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-emerald-600 font-bold mr-1.5">&bull;</span>
+              <span><strong>Safety Stock 7–10 วัน:</strong> กลุ่ม A เช่น BB270 สต็อกกันชน ~6.1–8.8 ตัน</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-rose-600 font-bold mr-1.5">&bull;</span>
+              <span><strong>Freeze PO ทันที:</strong> ห้ามออก PO เพิ่มสำหรับกลุ่ม C จนกว่าจะมี Order จริง</span>
+            </li>
+          </ul>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px]">
+            <span class="text-slate-500">เป้าหมายเงินทุน:</span>
+            <span class="font-bold text-emerald-700">กระแสเงินสดหมุนเวียน + ไม่ขาด</span>
+          </div>
+        </div>
+
+        <!-- Card 3: Planning -->
+        <div class="bg-white p-5 rounded-2xl border border-sky-100 shadow-sm relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-2 h-full bg-indigo-500"></div>
+          <div class="flex items-center space-x-3 mb-3">
+            <div class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center text-lg font-bold">📋</div>
+            <div>
+              <h3 class="text-sm font-bold text-slate-900">ภารกิจแผนกวางแผน</h3>
+              <p class="text-[11px] text-slate-500 font-medium">Production & Demand Planning</p>
+            </div>
+          </div>
+          <ul class="space-y-2 text-xs text-slate-600">
+            <li class="flex items-start">
+              <span class="text-indigo-600 font-bold mr-1.5">&bull;</span>
+              <span><strong>Rolling Forecast 3 เดือน:</strong> ทบทวนยอดกลุ่ม A สัปดาห์ละครั้งร่วมกับฝ่ายขาย</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-indigo-600 font-bold mr-1.5">&bull;</span>
+              <span><strong>MTO (Confirm Order จริง):</strong> กลุ่ม C ห้ามสั่งผลิตหรือจองกระดาษล่วงหน้า</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-amber-600 font-bold mr-1.5">&bull;</span>
+              <span><strong>แผนระบาย Re-cut / สลับเกรด:</strong> นำม้วนกลุ่ม C ที่ค้างมาตัดหน้ากว้างใช้ในงานอื่น</span>
+            </li>
+          </ul>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px]">
+            <span class="text-slate-500">รอบการประชุม:</span>
+            <span class="font-bold text-indigo-700">Weekly Review กับฝ่ายขาย</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- INTERACTIVE URGENT ACTION TABLE (FULL WIDTH) -->
+      <div class="bg-white p-5 rounded-2xl border border-sky-100 shadow-sm w-full space-y-4">
+        <!-- Control Header & Filters -->
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3 border-b border-sky-100 pb-4">
+          <div>
+            <h3 class="text-base font-bold text-slate-900 flex items-center">
+              <span class="w-2.5 h-2.5 rounded-full bg-rose-500 mr-2 animate-pulse"></span>
+              ตารางติดตามและบริหารรายการเร่งด่วน (Urgent Action Matrix)
+            </h3>
+            <p class="text-xs text-slate-500 mt-0.5">คลิกสถานะเพื่อปรับเปลี่ยนการดำเนินการของแต่ละแผนก (บันทึกลงระบบทันที)</p>
+          </div>
+
+          <!-- Filter Pills -->
+          <div class="flex flex-wrap items-center gap-1.5 text-xs">
+            <button onclick="setUrgentFilter('ALL')" id="urgent-filter-ALL" class="urgent-tab-btn px-3 py-1.5 rounded-xl font-bold bg-sky-600 text-white transition shadow-2xs">ทั้งหมด (47)</button>
+            <button onclick="setUrgentFilter('A')" id="urgent-filter-A" class="urgent-tab-btn px-3 py-1.5 rounded-xl font-medium bg-slate-100 hover:bg-emerald-50 text-emerald-800 transition">🚨 กลุ่ม A (26)</button>
+            <button onclick="setUrgentFilter('C')" id="urgent-filter-C" class="urgent-tab-btn px-3 py-1.5 rounded-xl font-medium bg-slate-100 hover:bg-rose-50 text-rose-800 transition">⚠️ กลุ่ม C (21)</button>
+            <button onclick="setUrgentFilter('BB')" id="urgent-filter-BB" class="urgent-tab-btn px-3 py-1.5 rounded-xl font-medium bg-slate-100 hover:bg-amber-50 text-amber-800 transition">⭐ โฟกัส BB270</button>
+            <input type="text" id="urgent-search-input" oninput="renderUrgentActionTable()" placeholder="ค้นหากรุ๊ป/แกรม..." class="px-3 py-1.5 bg-sky-50/50 border border-sky-200 rounded-xl text-xs focus:ring-2 focus:ring-sky-500 focus:outline-none w-36 sm:w-44">
+          </div>
+        </div>
+
+        <!-- The Table -->
+        <div class="overflow-x-auto w-full">
+          <table class="w-full text-xs text-left">
+            <thead class="bg-sky-50/80 text-sky-900 text-[11px] uppercase border-b border-sky-100">
+              <tr>
+                <th class="px-3 py-2.5">กรุ๊ป/แกรม</th>
+                <th class="px-3 py-2.5 text-center">กลุ่ม</th>
+                <th class="px-3 py-2.5 text-right">ยอดใช้ 9 ด.</th>
+                <th class="px-3 py-2.5 text-right">ราคา (บาท)</th>
+                <th class="px-3 py-2.5">🏭 ภารกิจคลังม้วน</th>
+                <th class="px-3 py-2.5">🛒 ภารกิจจัดซื้อ</th>
+                <th class="px-3 py-2.5">📋 ภารกิจวางแผน</th>
+                <th class="px-3 py-2.5 text-center">สถานะติดตาม</th>
+                <th class="px-3 py-2.5 text-center">เจาะลึก</th>
+              </tr>
+            </thead>
+            <tbody id="urgent-action-tbody" class="divide-y divide-slate-100">
+              <!-- Populated by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- SUPPORTING TOOLS: ACTION FILE VAULT & DATA IMPORTER (INTEGRATED) -->
+      <div class="bg-white p-5 rounded-2xl border border-sky-100 shadow-sm w-full space-y-4">
+        <div class="border-b border-sky-100 pb-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div>
+            <h3 class="text-sm font-bold text-slate-900 flex items-center">
+              <span class="w-2.5 h-2.5 rounded-full bg-sky-500 mr-2"></span>
+              คลังเอกสารคำสั่งการบริหาร & ระบบอัปเดตข้อมูล (Supporting Files & Data Importer)
+            </h3>
+            <p class="text-xs text-slate-500 mt-0.5">แนบเอกสาร PO, แผนการผลิต, ใบสั่ง Re-cut, สเปกลูกค้า (ทุกนามสกุล *.*) หรือนำเข้ายอด Item Ledger</p>
+          </div>
+          <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-sky-50 text-sky-700 font-semibold border border-sky-200">IndexedDB Storage</span>
+        </div>
+
+        <!-- Two-Column Form & Importer -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full">
         
         <!-- SECTION 1: Item-Level Attachment Uploader -->
         <div class="bg-white p-5 rounded-2xl border border-sky-100 shadow-sm flex flex-col justify-between">
@@ -728,7 +885,7 @@
                 <div class="w-8 h-8 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center font-bold text-base">📎</div>
                 <div>
                   <h3 class="text-sm font-bold text-slate-900">1. แนบไฟล์เอกสารผูกกับ กรุ๊ป/แกรม</h3>
-                  <p class="text-[11px] text-slate-500">แนบใบ PO, ผลแล็บ, ใบสเปกกระดาษ, รูปม้วนแตก ผูกกับ BB270, BB250 ฯลฯ</p>
+                  <p class="text-[11px] text-slate-500">แนบใบ PO, ผลแล็บ, ใบสเปกกระดาษ, รูปม้วนแตก ผูกกับ BB270, CM125 ฯลฯ</p>
                 </div>
               </div>
               <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-sky-50 text-sky-700 border border-sky-200 font-mono">ทุกนามสกุล (*.*)</span>
@@ -829,6 +986,7 @@
         </div>
 
       </div>
+    </div>
 
       <!-- ATTACHMENT VAULT TABLE (FULL WIDTH) -->
       <div class="bg-white p-5 rounded-2xl border border-sky-100 shadow-sm w-full">
@@ -842,7 +1000,6 @@
             <select id="attachment-filter-item" onchange="filterAttachmentTable()" class="px-3 py-1.5 bg-sky-50/50 border border-sky-200 rounded-xl text-xs focus:ring-2 focus:ring-sky-500 focus:outline-none">
               <option value="ALL">ทุกไอเทม</option>
               <option value="BB270">BB270</option>
-              <option value="BB250">BB250</option>
             </select>
             <select id="attachment-filter-type" onchange="filterAttachmentTable()" class="px-3 py-1.5 bg-sky-50/50 border border-sky-200 rounded-xl text-xs focus:ring-2 focus:ring-sky-500 focus:outline-none">
               <option value="ALL">ทุกนามสกุล</option>
@@ -1048,7 +1205,7 @@
         <div class="grid grid-cols-2 gap-3">
           <div>
             <label class="block font-semibold text-slate-700 mb-1">รหัสกรุ๊ป/แกรม (Item Code) *</label>
-            <input type="text" id="new-item-code" placeholder="เช่น BB250" class="w-full bg-sky-50/40 border border-sky-200 rounded-xl px-3 py-2 font-mono font-bold uppercase focus:ring-2 focus:ring-sky-500">
+            <input type="text" id="new-item-code" placeholder="เช่น BB300 หรือ CA110" class="w-full bg-sky-50/40 border border-sky-200 rounded-xl px-3 py-2 font-mono font-bold uppercase focus:ring-2 focus:ring-sky-500">
           </div>
           <div>
             <label class="block font-semibold text-slate-700 mb-1">กรุ๊ปกระดาษ (Group)</label>
@@ -4440,36 +4597,16 @@
 
       appState.groups = INITIAL_GROUPS.map(g => ({ ...g }));
 
-      // Ensure BB250 is present as an item
-      const hasBB250 = appState.items.some(it => it.itemCode === 'BB250');
-      if (!hasBB250) {
-        const bb250Item = {
-          itemCode: 'BB250',
-          group: 'BB',
-          gram: 250,
-          totalUsage: 0,
-          activeMonths: 0,
-          avgMonthlyUsage: 0,
-          months: { jan:0, feb:0, mar:0, apr:0, may:0, jun:0, jul:0, aug:0, sep:0 },
-          pMin: 23.5,
-          pMax: 23.5,
-          pRef: 23.5,
-          priceLevel: 'สูง',
-          gapAvg: 0,
-          gapWeight: 0,
-          gapLevel: 'ไม่มี GAP',
-          gapCount: 0,
-          gapSales: 0,
-          abc: 'C',
-          reason: 'ไอเทมใหม่/อยู่ระหว่างทดสอบ (ยังไม่มียอดใช้จริงใน 2026) -> ต้องใช้ Confirm Order',
-          stockPolicy: 'MTO / Stock ต่ำสุด / รอ Demand จริง',
-          forecast: 'Confirm Order / แผนผลิตเฉพาะงาน',
-          safetyStock: '0 วัน (Made-to-Order)',
-          review: 'รายเดือน',
-          capitalControl: 'ห้ามสั่งซื้อเผื่อ / สั่งตามยอดจองเท่านั้น'
-        };
-        appState.items.push(bb250Item);
-        saveItemToDb(bb250Item);
+      // Ensure BB250 is removed if present from prior database sessions
+      const idxBB250 = appState.items.findIndex(it => it.itemCode === 'BB250');
+      if (idxBB250 !== -1) {
+        appState.items.splice(idxBB250, 1);
+        if (dbInstance) {
+          try {
+            const tx = dbInstance.transaction('items', 'readwrite');
+            tx.objectStore('items').delete('BB250');
+          } catch(e) {}
+        }
       }
 
       appState.attachments = await getAllFromStore('attachments') || [];
@@ -4481,6 +4618,7 @@
       renderGroupsRollupTable();
       renderAgingWatchlist();
       renderAttachmentsTable();
+      renderUrgentActionTable();
       selectItem(appState.selectedItemCode);
       initCharts();
     }
@@ -4559,6 +4697,8 @@
         setTimeout(() => resizeCharts(), 50);
       } else if (tabId === 'tab-simulation') {
         runSimulation();
+      } else if (tabId === 'tab-files') {
+        renderUrgentActionTable();
       }
     }
 
@@ -4765,8 +4905,6 @@
       list.sort((a, b) => {
         if (a.itemCode === 'BB270') return -1;
         if (b.itemCode === 'BB270') return 1;
-        if (a.itemCode === 'BB250') return -1;
-        if (b.itemCode === 'BB250') return 1;
         return (b.totalUsage || 0) - (a.totalUsage || 0);
       });
 
@@ -5453,7 +5591,243 @@
     }
 
     // ==========================================
-    // TAB 4: UNIVERSAL FILE MANAGER & ATTACHMENTS
+    // TAB 4: URGENT ACTION PLAN & 3-DEPARTMENT MANAGEMENT
+    // ==========================================
+    let urgentFilterMode = 'ALL';
+
+    function setUrgentFilter(mode) {
+      urgentFilterMode = mode;
+      ['ALL', 'A', 'C', 'BB'].forEach(m => {
+        const btn = document.getElementById('urgent-filter-' + m);
+        if (btn) {
+          if (m === mode) {
+            btn.className = 'urgent-tab-btn px-3 py-1.5 rounded-xl font-bold bg-sky-600 text-white transition shadow-2xs';
+          } else {
+            const colorClass = m === 'A' ? 'hover:bg-emerald-50 text-emerald-800' :
+                               m === 'C' ? 'hover:bg-rose-50 text-rose-800' :
+                               m === 'BB' ? 'hover:bg-amber-50 text-amber-800' :
+                               'text-slate-700 hover:bg-sky-50';
+            btn.className = `urgent-tab-btn px-3 py-1.5 rounded-xl font-medium bg-slate-100 ${colorClass} transition`;
+          }
+        }
+      });
+      renderUrgentActionTable();
+    }
+
+    function getUrgentItemStatus(itemCode) {
+      const saved = localStorage.getItem('abc_urgent_status_' + itemCode);
+      if (saved) return saved;
+      if (itemCode === 'BB270') return '📦 ควบคุมเข้มงวด (Days Cover)';
+      const it = appState.items.find(x => x.itemCode === itemCode);
+      if (it && it.abc === 'A') return '📦 เฝ้าระวัง Days Cover (ห้ามขาด)';
+      if (it && it.abc === 'C') return '🚨 Freeze PO แล้ว (คุมเงินจม)';
+      return '🟢 ควบคุมได้ตามเกณฑ์';
+    }
+
+    function updateUrgentItemStatus(itemCode, newStatus) {
+      localStorage.setItem('abc_urgent_status_' + itemCode, newStatus);
+      const toast = document.createElement('div');
+      toast.className = 'fixed bottom-5 right-5 z-50 bg-slate-900 text-white px-4 py-2.5 rounded-xl text-xs shadow-lg flex items-center space-x-2 transition-opacity duration-300';
+      toast.innerHTML = `<span class="text-emerald-400 font-bold">✓</span> บันทึกสถานะ ${itemCode}: <b>${escapeHtml(newStatus)}</b> เรียบร้อย`;
+      document.body.appendChild(toast);
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        setTimeout(() => toast.remove(), 300);
+      }, 2000);
+    }
+
+    function getDepartmentActions(it) {
+      const isBB270 = it.itemCode === 'BB270';
+      const isA = it.abc === 'A';
+      const isC = it.abc === 'C';
+
+      let wh = '';
+      let po = '';
+      let pl = '';
+
+      if (isBB270) {
+        wh = '<span class="text-sky-800 font-semibold">คุมเข้ม Days Cover 15–20 วัน</span> (Min ~8 ม้วน / Max ~17 ม้วน) &bull; วางโซนจ่ายเร็วหน้าสุด &bull; นับสต็อกทุกสัปดาห์';
+        po = '<span class="text-emerald-800 font-semibold">ทยอยรับมอบ (Staggered PO)</span> สัปดาห์ละ 2 รอบ &bull; Safety Stock 6.1–8.8 ตัน &bull; ห้ามของขาดเด็ดขาด';
+        pl = '<span class="text-indigo-800 font-semibold">Rolling Forecast 3 เดือน</span> ละเอียดระดับสัปดาห์ &bull; สรุปยอดร่วมกับฝ่ายขาย 2 ครั้ง/สัปดาห์';
+      } else if (isA) {
+        const minRolls = Math.max(2, Math.round(((it.avgMonthlyUsage || 0) / 30 * 15) / 1000));
+        const maxRolls = Math.max(4, Math.round(((it.avgMonthlyUsage || 0) / 30 * 20) / 1000));
+        wh = `<span class="text-sky-800 font-semibold">Days Cover 15–20 วัน</span> (Min ~${minRolls} / Max ~${maxRolls} ม้วน) &bull; จัดโซน Fast-Moving &bull; นับสต็อกรายสัปดาห์`;
+        po = `<span class="text-emerald-800 font-semibold">ทยอยรับมอบ (Staggered PO)</span> สัปดาห์ละงวด &bull; คุมสต็อกกันชน 7–10 วัน &bull; ล็อคราคา Supplier`;
+        pl = `<span class="text-indigo-800 font-semibold">Rolling Forecast 3 เดือน</span> &bull; ทบทวนยอดร่วมกับฝ่ายขายทุกวันจันทร์ &bull; แจ้งจัดซื้อล่วงหน้า`;
+      } else if (isC) {
+        wh = `<span class="text-rose-800 font-semibold">ตรวจ Aging &gt;60 วัน</span> &bull; เช็คความชื้น/สภาพม้วน &bull; ย้ายเข้าโซน Slow-Moving &bull; นับสต็อกรายเดือน`;
+        po = `<span class="text-rose-800 font-semibold">🚨 Freeze PO ทันที</span> &bull; สั่งซื้อตาม Order จริงเท่านั้น (ห้ามสั่งเก็งกำไร) &bull; เจรจาไม่ติดขั้นต่ำ`;
+        pl = `<span class="text-indigo-800 font-semibold">ห้ามทำ Buffer Stock</span> &bull; เสนอฝ่ายขายสลับเกรด หรือส่งฝ่ายผลิตวางแผน Re-cut ระบายม้วน`;
+      } else {
+        wh = `คุม Days Cover 20–30 วัน &bull; จัดเก็บปกติ &bull; เช็คสต็อกทุก 2 สัปดาห์`;
+        po = `สั่งซื้อแบบ Regular Batch (รอบปกติ) &bull; Safety Stock 10–15 วัน`;
+        pl = `Forecast รายเดือน &bull; วางแผนสั่งกระดาษล่วงหน้าตามรอบสั่งซื้อ`;
+      }
+
+      return { wh, po, pl };
+    }
+
+    function renderUrgentActionTable() {
+      const tbody = document.getElementById('urgent-action-tbody');
+      if (!tbody) return;
+
+      const searchVal = (document.getElementById('urgent-search-input')?.value || '').trim().toUpperCase();
+
+      let list = appState.items.filter(it => {
+        if (urgentFilterMode === 'A') return it.abc === 'A';
+        if (urgentFilterMode === 'C') return it.abc === 'C';
+        if (urgentFilterMode === 'BB') return it.itemCode === 'BB270' || it.group === 'BB';
+        return it.abc === 'A' || it.abc === 'C';
+      });
+
+      if (searchVal) {
+        list = list.filter(it => 
+          it.itemCode.toUpperCase().includes(searchVal) || 
+          it.group.toUpperCase().includes(searchVal) ||
+          String(it.gram).includes(searchVal)
+        );
+      }
+
+      list.sort((a, b) => {
+        if (a.abc !== b.abc) {
+          return a.abc.localeCompare(b.abc);
+        }
+        if (a.abc === 'A') {
+          return (b.totalUsage || 0) - (a.totalUsage || 0);
+        }
+        return (a.totalUsage || 0) - (b.totalUsage || 0);
+      });
+
+      tbody.innerHTML = '';
+
+      if (list.length === 0) {
+        tbody.innerHTML = `
+          <tr>
+            <td colspan="9" class="text-center py-8 text-slate-400">
+              ไม่พบรายการเร่งด่วนตามเงื่อนไขค้นหา
+            </td>
+          </tr>
+        `;
+        return;
+      }
+
+      const statusOptions = [
+        '📦 เฝ้าระวัง Days Cover (ห้ามขาด)',
+        '🚨 Freeze PO แล้ว (คุมเงินจม)',
+        '📦 ควบคุมเข้มงวด (Days Cover)',
+        '🎯 Made-to-Order 100%',
+        '🟡 กำลังดำเนินการ/ประสานงาน',
+        '🟢 ควบคุมได้ตามเกณฑ์',
+        '✂️ อยู่ระหว่างวางแผน Re-cut',
+        '🔍 รอประชุม 3 แผนก'
+      ];
+
+      list.forEach(it => {
+        const tr = document.createElement('tr');
+        tr.className = 'hover:bg-sky-50/40 transition border-b border-slate-100';
+
+        const abcBadge = it.abc === 'A' 
+          ? '<span class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-200">กลุ่ม A</span>'
+          : it.abc === 'C'
+          ? '<span class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-rose-100 text-rose-800 border border-rose-200">กลุ่ม C</span>'
+          : '<span class="px-2 py-0.5 rounded-full text-[11px] font-bold bg-sky-100 text-sky-800 border border-sky-200">กลุ่ม B</span>';
+
+        const currentStatus = getUrgentItemStatus(it.itemCode);
+        const actions = getDepartmentActions(it);
+
+        let optionsHtml = '';
+        statusOptions.forEach(opt => {
+          const sel = opt === currentStatus ? 'selected' : '';
+          optionsHtml += `<option value="${escapeHtml(opt)}" ${sel}>${escapeHtml(opt)}</option>`;
+        });
+
+        const isHighlight = it.itemCode === 'BB270';
+        const rowBg = isHighlight ? 'bg-amber-50/30 font-semibold' : '';
+
+        tr.innerHTML = `
+          <td class="px-3 py-2.5 font-bold font-mono text-slate-900 ${rowBg}">
+            <div class="flex items-center space-x-1.5">
+              ${isHighlight ? '<span class="text-amber-500 font-bold">★</span>' : ''}
+              <button onclick="selectItem('${it.itemCode}'); switchTab('tab-deepdive');" class="text-sky-700 hover:text-sky-900 hover:underline">
+                ${it.itemCode}
+              </button>
+            </div>
+            <div class="text-[10px] text-slate-400 font-normal">กรุ๊ป ${it.group} &bull; ${it.gram}g</div>
+          </td>
+          <td class="px-3 py-2.5 text-center">${abcBadge}</td>
+          <td class="px-3 py-2.5 text-right font-mono font-medium text-slate-800">${formatNum(it.totalUsage)} กก.</td>
+          <td class="px-3 py-2.5 text-right font-mono text-slate-600">${(it.pRef || it.pMin || 0).toFixed(2)}</td>
+          <td class="px-3 py-2.5 text-[11px] text-slate-700 leading-snug max-w-xs">${actions.wh}</td>
+          <td class="px-3 py-2.5 text-[11px] text-slate-700 leading-snug max-w-xs">${actions.po}</td>
+          <td class="px-3 py-2.5 text-[11px] text-slate-700 leading-snug max-w-xs">${actions.pl}</td>
+          <td class="px-3 py-2.5 text-center">
+            <select onchange="updateUrgentItemStatus('${it.itemCode}', this.value)" class="bg-white border border-slate-300 rounded-lg px-2 py-1 text-[11px] text-slate-800 focus:ring-1 focus:ring-sky-500 focus:outline-none shadow-2xs">
+              ${optionsHtml}
+            </select>
+          </td>
+          <td class="px-3 py-2.5 text-center">
+            <button onclick="selectItem('${it.itemCode}'); switchTab('tab-deepdive');" class="px-2.5 py-1 rounded-lg bg-sky-50 hover:bg-sky-100 text-sky-700 text-[11px] font-semibold border border-sky-200 transition">
+              วิเคราะห์ &rarr;
+            </button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function exportUrgentActionPlan() {
+      if (typeof XLSX === 'undefined') {
+        alert('ไลบรารี XLSX กำลังโหลด โปรดลองใหม่อีกครั้ง');
+        return;
+      }
+
+      const urgentItems = appState.items.filter(it => it.abc === 'A' || it.abc === 'C' || it.itemCode === 'BB270');
+      urgentItems.sort((a, b) => {
+        if (a.abc !== b.abc) return a.abc.localeCompare(b.abc);
+        if (a.abc === 'A') return (b.totalUsage || 0) - (a.totalUsage || 0);
+        return (a.totalUsage || 0) - (b.totalUsage || 0);
+      });
+
+      const rows = urgentItems.map(it => {
+        const acts = getDepartmentActions(it);
+        const stripHtml = (html) => html.replace(/<[^>]*>?/gm, '').replace(/&bull;/g, '•').replace(/&gt;/g, '>').replace(/&lt;/g, '<');
+        return {
+          'กรุ๊ป/แกรม': it.itemCode,
+          'กรุ๊ป': it.group,
+          'แกรม': it.gram,
+          'กลุ่ม ABC': it.abc,
+          'ยอดใช้ 9 ด.(กก.)': Math.round(it.totalUsage || 0),
+          'ราคาอ้างอิง(บาท/กก.)': it.pRef || it.pMin || 0,
+          'ภารกิจคลังม้วน': stripHtml(acts.wh),
+          'ภารกิจจัดซื้อ': stripHtml(acts.po),
+          'ภารกิจวางแผน': stripHtml(acts.pl),
+          'สถานะติดตามปัจจุบัน': getUrgentItemStatus(it.itemCode),
+          'วันที่ส่งออก': new Date().toLocaleDateString('th-TH')
+        };
+      });
+
+      const wb = XLSX.utils.book_new();
+      const wsPlan = XLSX.utils.json_to_sheet(rows);
+      XLSX.utils.book_append_sheet(wb, wsPlan, 'แผนปฏิบัติการ_3แผนก');
+
+      const summaryRows = [
+        { 'หัวข้อ': 'แผนงานบริหารจัดการสินค้าเร่งด่วน 3 แผนก', 'รายละเอียด': 'คลังม้วน + จัดซื้อ + วางแผน' },
+        { 'หัวข้อ': 'หลักการบริหาร', 'รายละเอียด': 'ของไม่ขาด (กลุ่ม A) & เงินไม่จม (กลุ่ม C)' },
+        { 'หัวข้อ': 'รายการกลุ่ม A ทั้งหมด', 'รายละเอียด': '26 รายการ (ยอดใช้รวมคิดเป็น 88.54% ของโรงงาน)' },
+        { 'หัวข้อ': 'มาตรการกลุ่ม A', 'รายละเอียด': 'คลังคุม Days Cover 15-20 วัน / จัดซื้อทยอยรับมอบ Staggered PO / วางแผน Rolling Forecast 3 เดือน' },
+        { 'หัวข้อ': 'รายการกลุ่ม C ทั้งหมด', 'รายละเอียด': '21 รายการ (มียอดใช้น้อย หรือมีเดือนเบิกใช้ <= 4 เดือน)' },
+        { 'หัวข้อ': 'มาตรการกลุ่ม C', 'รายละเอียด': 'จัดซื้อ Freeze PO ทันที / คลังม้วนคุม Aging > 60 วัน / วางแผน MTO และ Re-cut สลับเกรด' },
+        { 'หัวข้อ': 'รายการโฟกัสพิเศษ', 'รายละเอียด': 'BB270 (ผู้นำกลุ่ม A: ยอดใช้ 237 ตัน)' }
+      ];
+      const wsSummary = XLSX.utils.json_to_sheet(summaryRows);
+      XLSX.utils.book_append_sheet(wb, wsSummary, 'หลักการบริหาร_3แผนก');
+
+      XLSX.writeFile(wb, `แผนปฏิบัติการเร่งด่วน_3แผนก_คลัง_จัดซื้อ_วางแผน_${new Date().toISOString().slice(0,10)}.xlsx`);
+    }
+
+    // ==========================================
+    // SUPPORTING TOOLS: UNIVERSAL FILE VAULT & ATTACHMENTS
     // ==========================================
     function handleDragOver(e) {
       e.preventDefault();
@@ -5831,7 +6205,7 @@
     }
 
     // ==========================================
-    // ADD NEW ITEM MODAL (e.g. BB250)
+    // ADD NEW ITEM MODAL
     // ==========================================
     function openAddItemModal() {
       document.getElementById('modal-add-item').classList.remove('hidden');
