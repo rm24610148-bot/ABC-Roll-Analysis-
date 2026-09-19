@@ -529,29 +529,6 @@
             </div>
           </div>
         </div>
-
-        <!-- Complete 82-Item Shortcuts Section in Tab 2 -->
-        <div class="pt-2.5 border-t border-sky-100 space-y-2 text-xs">
-          <div class="flex flex-wrap items-center justify-between gap-2">
-            <div class="flex items-center space-x-2">
-              <span class="text-xs font-bold text-slate-800 flex items-center">
-                <span class="text-amber-500 mr-1.5">⚡</span>ทางลัดเลือกกรุ๊ป/แกรม (ครบทุกตัว 82 รายการ):
-              </span>
-              <span class="text-[11px] text-slate-400 hidden sm:inline">คลิกที่ตัวใดเพื่อเปิดข้อมูลวิเคราะห์ทันที</span>
-            </div>
-            <!-- Quick Filter Pills for Tab 2 Shortcuts -->
-            <div class="flex items-center space-x-1">
-              <button type="button" onclick="setTab2ShortcutFilter('ALL')" id="t2-sc-ALL" class="px-2.5 py-1 rounded-lg text-xs font-bold bg-sky-600 text-white transition shadow-2xs">ทั้งหมด (82)</button>
-              <button type="button" onclick="setTab2ShortcutFilter('A')" id="t2-sc-A" class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 hover:bg-emerald-50 text-emerald-800 transition">🚨 กลุ่ม A (26)</button>
-              <button type="button" onclick="setTab2ShortcutFilter('B')" id="t2-sc-B" class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 hover:bg-sky-50 text-sky-800 transition">📦 กลุ่ม B (35)</button>
-              <button type="button" onclick="setTab2ShortcutFilter('C')" id="t2-sc-C" class="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 hover:bg-rose-50 text-rose-800 transition">⚠️ กลุ่ม C (21)</button>
-            </div>
-          </div>
-          <!-- All 82 item chips in Tab 2 -->
-          <div id="tab2-shortcuts-chips-container" class="flex flex-wrap gap-1.5 max-h-48 overflow-y-auto pr-1">
-            <!-- Populated dynamically with all 82 items -->
-          </div>
-        </div>
       </div>
 
       <!-- MAIN ITEM PROFILE CARD CONTAINER -->
@@ -4673,7 +4650,6 @@
       renderUrgentActionTable();
       populateQuickJumpDropdown();
       renderShortcutChips();
-      renderTab2ShortcutChips();
       selectItem(appState.selectedItemCode);
       initCharts();
     }
@@ -5171,7 +5147,6 @@
     // COMPLETE 82-ITEM SHORTCUTS & QUICK JUMP SYSTEM
     // ==========================================
     let shortcutDrawerFilter = 'ALL';
-    let tab2ShortcutFilter = 'ALL';
 
     function populateQuickJumpDropdown() {
       const select = document.getElementById('quick-jump-all-items');
@@ -5313,81 +5288,12 @@
       });
     }
 
-    function setTab2ShortcutFilter(abc) {
-      tab2ShortcutFilter = abc;
-      ['ALL', 'A', 'B', 'C'].forEach(k => {
-        const btn = document.getElementById('t2-sc-' + k);
-        if (btn) {
-          if (k === abc) {
-            btn.className = 'px-2.5 py-1 rounded-lg text-xs font-bold bg-sky-600 text-white shadow-2xs transition';
-          } else {
-            const hoverClass = k === 'A' ? 'hover:bg-emerald-50 text-emerald-800' :
-                               k === 'B' ? 'hover:bg-sky-50 text-sky-800' :
-                               k === 'C' ? 'hover:bg-rose-50 text-rose-800' :
-                               'text-slate-700 hover:bg-slate-200';
-            btn.className = `px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 ${hoverClass} transition`;
-          }
-        }
-      });
-      renderTab2ShortcutChips();
-    }
-
-    function renderTab2ShortcutChips() {
-      const container = document.getElementById('tab2-shortcuts-chips-container');
-      if (!container) return;
-
-      let list = appState.items.filter(it => {
-        if (tab2ShortcutFilter !== 'ALL' && it.abc !== tab2ShortcutFilter) return false;
-        return true;
-      });
-
-      list.sort((a, b) => {
-        if (a.abc !== b.abc) return a.abc.localeCompare(b.abc);
-        return (b.totalUsage || 0) - (a.totalUsage || 0);
-      });
-
-      container.innerHTML = '';
-      list.forEach(it => {
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.onclick = () => {
-          selectItem(it.itemCode);
-        };
-
-        const isSelected = it.itemCode === appState.selectedItemCode;
-        const colorClass = it.abc === 'A' 
-          ? 'bg-emerald-50 border-emerald-300 text-emerald-900 hover:bg-emerald-100'
-          : it.abc === 'C'
-          ? 'bg-rose-50 border-rose-300 text-rose-900 hover:bg-rose-100'
-          : 'bg-sky-50 border-sky-300 text-sky-900 hover:bg-sky-100';
-
-        const activeClass = isSelected ? 'ring-2 ring-sky-600 font-extrabold shadow-sm scale-105' : 'font-semibold';
-
-        btn.className = `t2-chip-${it.itemCode} px-2.5 py-1 rounded-xl text-xs font-mono border transition flex items-center space-x-1 ${colorClass} ${activeClass}`;
-        btn.title = `${it.itemCode} | กรุ๊ป ${it.group} แกรม ${it.gram} | ยอดใช้ ${formatNum(it.totalUsage)} กก. | กลุ่ม ${it.abc}`;
-        btn.innerHTML = `
-          <span>${it.itemCode}</span>
-          <span class="text-[10px] opacity-75 font-bold">(${it.abc})</span>
-        `;
-        container.appendChild(btn);
-      });
-    }
-
     function highlightActiveShortcutChips(code) {
       document.querySelectorAll('[class*="sc-chip-"]').forEach(el => {
         el.classList.remove('ring-2', 'ring-sky-600', 'font-extrabold', 'shadow-sm', 'scale-105');
         el.classList.add('font-semibold');
       });
       document.querySelectorAll('.sc-chip-' + code).forEach(el => {
-        el.classList.add('ring-2', 'ring-sky-600', 'font-extrabold', 'shadow-sm', 'scale-105');
-        el.classList.remove('font-semibold');
-      });
-
-      document.querySelectorAll('[class*="t2-chip-"]').forEach(el => {
-        el.classList.remove('ring-2', 'ring-sky-600', 'font-extrabold', 'shadow-sm', 'scale-105');
-        el.classList.add('font-semibold');
-      });
-      document.querySelectorAll('.t2-chip-' + code).forEach(el => {
         el.classList.add('ring-2', 'ring-sky-600', 'font-extrabold', 'shadow-sm', 'scale-105');
         el.classList.remove('font-semibold');
       });
